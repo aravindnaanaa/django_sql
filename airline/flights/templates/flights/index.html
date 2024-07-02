@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flights</title>
+</head>
+
+<body>
+    <h1>Flights</h1>
+    {% for flight in flights %}
+    <li>
+        <a href="{% url 'flights:flight' flight_id=flight.id %}">
+        Flight {{ flight.id }} : From {{flight.origin }} to {{flight.destination }}
+        </a>
+    </li>
+    {% endfor %} 
+    
+    {% for airport in airports%}
+    <li>{{airport}}</li>
+    {% endfor %}
+
+    <h2>city</h2>
+
+    {% for city in citys%}
+    <li>{{city}}</li>
+    {% endfor %}
+    
+</body>
+
+</html>
